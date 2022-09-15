@@ -5,12 +5,13 @@ def kmer(text,k):
   return kmers
 
 def HammingDistance(p,q):
-    n = len(p)
-    c = 0
-    for i in range(0,n):
-        if p[i] != q[i]:
-            c += 1
-    return c
+    if len(p)!=len(q):
+      return -1
+    dist=0
+    for first,second in zip(p,q):
+      if first!=second:
+        dist=dist+1
+    return dist
 
 def minHamDist(pattern,text):
   min=len(pattern)
