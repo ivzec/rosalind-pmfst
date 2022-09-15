@@ -12,17 +12,7 @@ def HammingDistance(p, q):
         if first != second:
             dist = dist + 1
     return dist
-
-def kmersfrequency(text, k):
-    """ returns dictionary of k-mers in text with number of occurrances"""
-    D = dict()
-    for i in range(0, len(text) - k + 1):
-        tmp = kmer(text, i, k)
-        try:
-            D[tmp] = D[tmp] + 1
-        except KeyError:
-            D[tmp] = 1
-    return(D)
+    
 
 def ApproximatePatternCount(text,pattern,d):
     """ returns number of occurrances pattern in text with at most
